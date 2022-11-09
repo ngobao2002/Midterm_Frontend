@@ -1,6 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Gugi&family=Lato:wght@100&family=Roboto:wght@100&family=Sofia&display=swap');
+
 /* RESET CSS */
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+:root{
+    --light-gray: #f5f5f5;
+    --primary-color: #2a2a2a;
+    --nav-color: #121212;
+    --border: #2b303218;
+    --text-color: #ff686b;
+    --roboto: "Roboto", san-serif;
+    --gugi: "Gugi", cursive;
+    --sofia: "Sofia", cursive;
+}
+
+.primary-color{
+    color: var(--primary-color);
+}
+
+.bg-primary-color{
+    background-color: var(--primary-color) !important;
+}
+.bg-nav-color{
+    background-color: var(--nav-color);
+}
+
+.text-color{
+    color: var(--text-color);
+}
+
+.font-roboto{
+    font-family: var(--roboto);
+}
+
+.lightblue{
+    color: lightblue;
+}
+
+.row img {
+    width: 300px;
+}
+
+.row img {
+    width: 200px;
+}
+
+.row .log-btn{
+    display: inline-block;
+    width: 200px;
+    padding: 15px 20px;
+    text-align: center;
+    border: none;
+    background: #a29bfe;
+    outline: none;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    color: #FFF;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.row .log-btn:hover{
+    transform: translateY(-7px);
+    background: #6c5ce7;
+}
+
+.row .log-btn a{
+    color: white;
+    text-decoration: none;
+}
+
+.container-fluid .navbar-nav .nav-link{
+    font-weight: 500;
+    color: #121212;
+    font-size: larger;
+    
+}
+
+.container-fluid .navbar-nav .nav-link:hover{
+    transform: translateY(-7px);
+    background: gray;
+}
+
+#carouselExampleSlidesOnly .carousel-inner .carousel-item img{
+    width: 50%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.sup-btn{
+    position: absolute;
+    flex-direction: column;
+    bottom: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.text__home {
+    margin-bottom: 100px;
+    color: white;
+    text-align: center;
+}
+
+.text__home h1{
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+.text__home p1{
+
+}
+
+.body__content{
+    background: white;
+}
+
+.sup-btn button{
+    padding: 10px 50px;
+    border-radius: 15px;
+    border: 0;
+    font-weight: 600;
+    font-size: 1.4rem;
+    background-color: #2b83ff;
+    color: white;
+}
+
+.sup-btn button:hover{
+    background-color: rgb(0, 221, 7);
+}
+
+.content__container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    color: black;
+    align-items: center;
+    padding: 50px 20px;
+}
+.content__container-box{
+    width: 40%;
+
+}
+
+.content__home{
+    width: 600px;
+    height: auto;
+    object-fit: cover;
 }

@@ -1,15 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- CSS only -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+        crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Trang chu ne</title><meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <header>
+    <link rel="stylesheet" href="css/bootstrap.css">
 
+    
+    <!-- Font Awesome CDN -->
+    <script src="https://kit.fontawesome.com/b4a6d67654.js" crossorigin="anonymous"></script>
+
+
+    
+
+    <!--Custom stylesheet-->
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    
+</head>
+<body class="bg-dark">
+    <header>
+        <div class="container">
+            <div class="row d-flex flex-row justify-content-center align-items-center">
+                <div class="col-md-4 col-sm-12 col-12">
+                    <img src="./assets/img/PngItem_4852378.png" alt="">
+                </div>
+    
+                <div class="col-md-4 col-sm-12 col-12 pt-5">
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                              </svg>
+                        </button>
+                    </form>
+                </div>
+
+                <div class="col-md-4 col-12 d-flex justify-content-center pt-5">    
+                    <button class="log-btn px-5 py-2">
+                        <a href="login.html">Login</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="icons">
+            <div id="menu-btn" class="fas fa-bars"></div>
+            <div id="menu-btn" class="fas fa-user"></div>
+        </div>
     </header>
+    <div class="body__content">
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+                
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav mx-auto">
+                        <a class="nav-link mx-3 active" aria-current="page" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+                            <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+                          </svg>
+                        </a>
+                        <a class="nav-link mx-3" href="#">Features</a>
+                        <a class="nav-link mx-3" href="#">Templates</a>
+                        <a class="nav-link mx-3" href="">Categories</a>
+                        <a class="nav-link mx-3" href="">FAQ</a>
+                        <a class="nav-link mx-3" href="">Help</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img class="d-block w-100" style="height: 400px; object-fit:cover" src="https://images.unsplash.com/photo-1583512603805-3cc6b41f3edb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" alt="First slide">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="..." alt="Second slide">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="..." alt="Third slide">
+              </div>
+            </div>
+        </div>
+        <div class="sup-btn">
+            <div class="text__home">
+                <h1>One app to replace them</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta nesciunt omnis, nemo amet dolorem alias consequatur ipsum, quos reprehenderit, minus nisi.</p>
+            </div>
+            <button >Get started</button>
+        </div>
+
+        <div class="content__container">
+            <div class="content__container-box">
+                <img class="content__home" src="https://images.unsplash.com/photo-1477884213360-7e9d7dcc1e48?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="img">
+            </div>
+            <div class="content__container-box">
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error ex vel asperiores minima facilis hic, voluptatem dolores labore magni sed, quibusdam nisi in et consectetur repudiandae, dolore tempore. Quam praesentium consequatur corporis sapiente cum, nulla suscipit ipsum cupiditate quasi itaque soluta saepe in? Eos, sapiente, dolor corrupti porro quidem error facilis, minima non adipisci quibusdam et.
+                </p>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-dark text-center text-white">
+            
+        <div class="container p-4">
+       
+        <section class="mb-4">
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+            ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+            ><i class="fab fa-twitter"></i
+            ></a>
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+            ><i class="fab fa-google"></i
+            ></a>
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+            ><i class="fab fa-instagram"></i
+            ></a>
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+            ><i class="fab fa-linkedin-in"></i
+            ></a>
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+            ><i class="fab fa-github"></i
+            ></a>
+            </section>
+            <section class="">
+                <div class="container text-center text-md-start mt-5">
+                  <!-- Grid row -->
+                  <div class="row mt-3">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                      <!-- Content -->
+                      <h6 class="text-uppercase fw-bold mb-4">
+                        <i class="fas fa-gem me-3"></i>Peaceful Store
+                      </h6>
+                      <p>
+                        Here you can buy the game you want with acceptable price.
+                      </p>
+                    </div>
+                    <!-- Grid column -->
+            
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                      <!-- Links -->
+                      <h6 class="text-uppercase fw-bold mb-4">
+                        Products
+                      </h6>
+                      <p>
+                        <a href="#!" class="text-reset">Game</a>
+                      </p>
+                      <p>
+                        <a href="#!" class="text-reset">Game</a>
+                      </p>
+                      <p>
+                        <a href="#!" class="text-reset">Game</a>
+                      </p>
+                      <p>
+                        <a href="#!" class="text-reset">Game</a>
+                      </p>
+                    </div>
+                    <!-- Grid column -->
+            
+                    
+                    <!-- Grid column -->
+            
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                      <!-- Links -->
+                      <h6 class="text-uppercase fw-bold mb-4">
+                        Contact
+                      </h6>
+                      <p><i class="fas fa-home me-3"></i> Da Nang, DN 10047, VN</p>
+                      <p>
+                        <i class="fas fa-envelope me-3"></i>
+                        ppn243@gmail.com
+                      </p>
+                      <p><i class="fas fa-phone me-3"></i> + 09 866 123 87</p>
+                      <p><i class="fas fa-print me-3"></i> + 06 123 143 54</p>
+                    </div>
+                    <!-- Grid column -->
+                  </div>
+                  <!-- Grid row -->
+                </div>
+              </section>
+              <!-- Section: Links  -->
+        </div>
+        
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2020 Copyright:
+        <a class="text-white" href="https://mdbootstrap.com/">Peaceful.com</a>
+        </div>
+    </footer>
     
 </body>
 </html>
