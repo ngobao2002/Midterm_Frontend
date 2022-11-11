@@ -41,3 +41,241 @@
     color: lightblue;
 }
 
+.beta-relative {
+    position:relative
+}
+
+header{
+    background-color: var(--primary-color);
+    font-family: var(--roboto);
+}
+
+header .site-title{
+    font-family: var(--gugi);
+}
+
+.container .dropdown-toggle,
+.container .dropdown-item{
+    font-size: 0.7em;
+} 
+
+.container .btn:hover{
+    transform: translateY(-5px);
+    background: #6c5ce7;
+}
+
+.btn-border{
+    border-radius: 30px;
+}
+
+.header-links a{
+    font-size: 0.9em;
+    text-decoration: none;
+    color: white;
+}
+
+.img-size{
+    height: 60px;
+    width: 120px;
+}
+
+/*Navigation menu*/
+.navbar-nav{
+    padding: 0.8em 0em;
+}
+
+.navbar-nav .nav-link{
+    font-size: 1.2rem;
+    font-weight: 200px;
+    color: var(--light-gray) !important;
+    
+    
+}
+
+.navbar-nav .nav-link{
+    margin-left: 50px;
+
+}
+
+.navbar-nav .nav-link:hover{
+    transform: translateY(-5px);
+    background: #6c5ce7;
+
+}
+
+
+
+/* Slider one */
+
+.site-slider{
+    position: relative;
+}
+
+.position-top{
+    position: absolute;
+    top: 50%;
+}
+
+.site-slider .slider-btn .prev,
+.site-slider .slider-btn .next{
+    background-color: lightblue;
+    padding: 1rem 1.5rem;
+    border-radius: 10rem;
+    color: white;
+    margin: 0 1rem;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.site-slider:hover .slider-btn .prev,
+.site-slider .slider-btn .next{
+    opacity: 1;
+}
+.right-0{
+    right: 0;
+}
+
+/* Slick Dots*/
+
+.slick-dots{
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 1rem 0;
+    list-style-type: none;
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+}
+
+.slick-dots li{
+    margin: 0 0.4rem;
+}
+
+.slick-dots button{
+    display: block;
+    width: 0.5rem;
+    height: 0.5rem;
+    padding: 0;
+    border: none;
+    background-color: white;
+    text-indent: -99999px;
+    border-radius: 100% ;
+}
+
+.slick-dots li.slick-active button{
+    transform: scale(2.5);
+    box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.205);
+}
+.text {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    color: rgb(245, 245, 245);
+    font-size: 18px;
+    line-height: 1.4;
+}
+h2 {
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+.box1 {
+    font-size: 14px;
+    letter-spacing: 0.2px;
+    line-height: 1.4;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    flex-shrink: 0;
+}
+.text1 {
+    white-space: normal;
+    overflow: hidden;
+    color: #f5f5f5;
+}
+.item1 {
+    font-size: 9px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    background-color: rgb(0, 116, 228);
+    color: rgb(245, 245, 245);
+    padding: 5px 10px;
+    position: relative;
+    border-radius: 4px;
+}
+.box {
+    display: flex;
+}
+.swiper-button-prev {
+    padding-left: 1vmax;
+}
+.discount {
+    transition: color 125ms ease-in-out;
+    color: rgba(245, 245, 245, 0.6);
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+}
+
+.box2 {
+    display: flex;
+    flex: 1;
+    padding: 0 16px;
+    margin-top: 20px;
+}
+@media (min-width: 1024px) {
+.text2 {
+        color: rgb(245, 245, 245);
+        font-size: 16px;
+        line-height: 25px;
+        letter-spacing: -0.2px;
+    }
+}
+.heading1 {
+    display: -webkit-box;
+    overflow: hidden;
+    word-break: break-word;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+.abc {
+        font-size: 12px;
+        line-height: 15px;
+        transition: color 125ms ease-in-out;
+        color: rgba(245, 245, 245, 0.6);
+        font-weight: normal;
+        letter-spacing: 0.2px;
+    }
+}
+.abcd {
+    display: -webkit-box;
+    overflow: hidden;
+    word-break: break-word;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+}
+.image:hover {
+    opacity: 0.5;
+}
+
+.box-image {
+    position: relative;  
+}
+ /* .box-image img {
+    width: 100%;
+    height: auto;
+ } */
+ .box-image .btn {
+    position: absolute;
+    top: 15%;
+    left: 90%;
+    transform: translate(-50%, -50%);
+    border-radius: 10rem;
+ }

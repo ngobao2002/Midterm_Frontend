@@ -34,6 +34,14 @@
     color: lightblue;
 }
 
+.btn-purple{
+    color: #a29bfe;
+}
+
+.lightgray {
+    color: var(--light-gray);
+}
+
 *{
     margin: 0;
     padding: 0;
