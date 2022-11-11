@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Gugi&family=Lato:wght@100&family=Roboto:wght@100&family=Sofia&display=swap');
+
+/* RESET CSS */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --light-gray: #f5f5f5;
+    --primary-color: #2a2a2a;
+    --nav-color: #121212;
+    --border: #2b303218;
+    --text-color: #ff686b;
+    --roboto: "Roboto", san-serif;
+    --gugi: "Gugi", cursive;
+    --sofia: "Sofia", cursive;
+}
+
+.primary-color{
+    color: var(--primary-color);
+}
+
+.bg-primary-color{
+    background-color: var(--primary-color) !important;
+}
+.bg-nav-color{
+    background-color: var(--nav-color);
+}
+
+.text-color{
+    color: var(--text-color);
+}
+
+.font-roboto{
+    font-family: var(--roboto);
+}
+
+.lightblue{
+    color: lightblue;
+}
+
+.beta-relative {
+    position:relative
+}
+
+.img-size{
+    height: 70px;
+    width: 140px;
+}
+
+body{
+    min-height: 100vh;
+    background-color: var(--primary-color);
+}
+
+.navbar{
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    /* margin-left: -300px; */
+    background-color: var(--nav-color);
+    transition: 0.4s;
+}
+
+.nav-link{
+    font-size: 1.25em;
+}
+
+.nav-link:active,
+.nav-link:focus,
+.nav-link:hover{
+    background-color: #ffffff26;
+}
+
+.my-container{
+    transition: 0.4s;
+}
+
+
+
