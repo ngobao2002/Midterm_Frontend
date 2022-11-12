@@ -50,6 +50,11 @@
     width: 140px;
 }
 
+.avatar-size{
+    height: 250px;
+    width: 250px;
+}
+
 body{
     min-height: 100vh;
     background-color: var(--primary-color);
