@@ -3,7 +3,7 @@ var uid = null;
 var client = null;
 
 if (jwt != null) {
-  window.location.href = 'make_task.html';
+  window.location.href = 'homepage.html';
 }
 
 function loginFunction() {
