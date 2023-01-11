@@ -8,7 +8,7 @@ const folder_lists = document.getElementById("folder_lists");
 const deletefolder_lists = document.getElementById("deletefolder_lists")
 const addtaskfolders_lists = document.getElementById("addtaskfolders_lists")
 const updatefolder_lists = document.getElementById("updatefolder_lists");
-// const movetaskfolders_list = document.getElementById("movetaskfolders_list");
+const movetaskfolders_list = document.getElementById("movetaskfolders_list");
 
 if (jwt == null) {
     alert('You need to login before try to make a task!');
@@ -199,7 +199,10 @@ function getSharedTask() {
 
                         if (random == 1) {
                             td_status.innerHTML = "Not done"
-                        } else {
+                        
+                        }else if (random == 2){
+                            td_status.innerHTML = "Doing"
+                        }else {
                             td_status.innerHTML = "Done"
                         }
                         //create table
@@ -263,6 +266,7 @@ function fetchTask() {
 
                         const edit_button = document.createElement("button");
                         const completed_button = document.createElement("button");
+                        const doing_button = document.createElement("button");
                         const share_button = document.createElement("button");
                         // const duplicate_button = document.createElement("button");
                         // const move_button = document.createElement("button");
@@ -270,6 +274,7 @@ function fetchTask() {
 
                         const edit_i = document.createElement("i");
                         const completed_i = document.createElement("i");
+                        const doing_i = document.createElement("i");
                         const share_i = document.createElement("i");
                         // const duplicate_i = document.createElement("i");
                         // const move_i = document.createElement("i");
@@ -277,19 +282,25 @@ function fetchTask() {
 
                         th_id.scope = "row";
 
-                        edit_button.className = "btn btn-primary 1";
+                        edit_button.className = "btn btn-primary 1 mx-1";
                         edit_button.title = "Edit";
                         edit_button.setAttribute("data-toggle", "modal");
                         edit_button.setAttribute("data-target", "#editModal");
                         edit_i.className = "fa fa-edit";
 
-                        completed_button.className = "btn btn-success 1";
+                        completed_button.className = "btn btn-success 1 mx-1";
                         completed_button.title = "Mark as completed";
                         completed_button.setAttribute("data-toggle", "modal");
                         completed_button.setAttribute("data-target", "#completedModal");
-                        completed_i.className = "fa fa-check-square-o";
+                        completed_i.className = "fa-solid fa-check";
 
-                        share_button.className = "btn btn-info 1";
+                        doing_button.className = "btn btn-warning 1 mx-1";
+                        doing_button.title = "Doing";
+                        doing_button.setAttribute("data-toggle", "modal");
+                        doing_button.setAttribute("data-target", "#DoingModal");
+                        doing_i.className = "fa-solid fa-spinner";
+
+                        share_button.className = "btn btn-info 1 mx-1";
                         share_button.title = "Share";
                         share_button.setAttribute("data-toggle", "modal");
                         share_button.setAttribute("data-target", "#shareModal");
@@ -307,24 +318,31 @@ function fetchTask() {
                         // move_button.setAttribute("data-target", "#moveModal");
                         // move_i.className = "fa fa-arrows";
 
-                        delete_button.className = "btn btn-danger 1";
+                        delete_button.className = "btn btn-danger 1 mx-1";
                         delete_button.title = "Delete";
                         delete_button.setAttribute("data-toggle", "modal");
                         delete_button.setAttribute("data-target", "#deletedModal");
-                        delete_i.className = "fa fa-trash-o";
+                        delete_i.className = "fa-solid fa-trash";
 
                         th_id.innerHTML = counter + 1;
                         td_name.innerHTML = list["name"];
                         if (list["done"] == null) {
                             td_status.innerHTML = "Not done";
+                        }
+                        else if(list["doing"] == doing_button){
+
+                            td_status.innerHTML = "Doing";
+                            
                         } else {
                             td_status.innerHTML = "Completed";
                             edit_button.style.display = "none";
                             share_button.style.display = "none";
                             completed_button.style.display = "none";
+                            // doing_button.style.display = "none";
                             // duplicate_button.style.display = "none";
                             // move_button.style.display = "none";
                         }
+                        
                         if (!list["description"].trim()) {
                             td_details.innerHTML = "No detail has been received.";
                         } else {
@@ -344,6 +362,9 @@ function fetchTask() {
 
                         td_options.appendChild(completed_button);
                         completed_button.appendChild(completed_i);
+
+                        td_options.appendChild(doing_button);
+                        doing_button.appendChild(doing_i);
 
                         td_options.appendChild(share_button);
                         share_button.appendChild(share_i);
@@ -652,7 +673,7 @@ function deleteFolder() {
         })
     } else {
         Swal.fire({
-            text: 'Please choose folder `(*>﹏<*)′',
+            text: 'Please choose folder',
             icon: 'error',
             confirmButtonText: 'OK'
         });
@@ -720,7 +741,7 @@ function addTask() {
     let folder_value = addtaskfolders_lists.value;
     if (task_name == "") {
         Swal.fire({
-            text: 'Oopsie hold on task name is empty 😂',
+            text: 'Hold on task name is empty ',
             icon: 'error',
             confirmButtonText: 'OK'
         });
@@ -753,7 +774,7 @@ function addTask() {
                     })
                 } else {
                     Swal.fire({
-                        text: 'Please choose folder `(*>﹏<*)′',
+                        text: 'Please choose space ',
                         icon: 'error',
                         confirmButtonText: 'OK'
                     });
