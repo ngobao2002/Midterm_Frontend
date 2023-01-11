@@ -152,7 +152,7 @@ function getSharedTask() {
     document.getElementById("table").style.display = "inline";
     document.getElementById("btn_addtask").style.display = "inline";
     document.getElementById("notify").innerHTML = "";
-    document.getElementById("filter_select").value = "all";
+    // document.getElementById("filter_select").value = "all";
     counter = 0;
     $("#task_lists").empty();
     const xhttp = new XMLHttpRequest();
@@ -226,7 +226,7 @@ function selectFolder() {
     document.getElementById("table").style.display = "inline";
     document.getElementById("btn_addtask").style.display = "inline";
     document.getElementById("notify").innerHTML = "";
-    document.getElementById("filter_select").value = "all";
+    // document.getElementById("filter_select").value = "all";
     counter = 0;
     $("#task_lists").empty();
     fetchTask();
@@ -785,24 +785,24 @@ function addTask() {
 }
 
 //Functions for outside of tasks
-function filterStatus() {
-    const filter = document.getElementById("filter_select");
-    const table = document.getElementById("table");
-    rows = table.getElementsByTagName('tr');
+// function filterStatus() {
+//     const filter = document.getElementById("filter_select");
+//     const table = document.getElementById("table");
+//     rows = table.getElementsByTagName('tr');
 
-    for (i = 1, j = rows.length; i < j; ++i) {
-        cells = rows[i].getElementsByTagName('td');
-        if (filter.value != "all") {
-            if (cells[1].innerHTML != filter.value) {
-                rows[i].style.display = "none";
-            } else {
-                rows[i].style.display = "table-row";
-            }
-        } else {
-            rows[i].style.display = "table-row";
-        }
-    }
-}
+//     for (i = 1, j = rows.length; i < j; ++i) {
+//         cells = rows[i].getElementsByTagName('td');
+//         if (filter.value != "all") {
+//             if (cells[1].innerHTML != filter.value) {
+//                 rows[i].style.display = "none";
+//             } else {
+//                 rows[i].style.display = "table-row";
+//             }
+//         } else {
+//             rows[i].style.display = "table-row";
+//         }
+//     }
+// }
 
 function search() {
     let input, filter, table, tr, td, i, txtValue;
