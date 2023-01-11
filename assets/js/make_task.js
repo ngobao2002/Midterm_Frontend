@@ -8,7 +8,7 @@ const folder_lists = document.getElementById("folder_lists");
 const deletefolder_lists = document.getElementById("deletefolder_lists")
 const addtaskfolders_lists = document.getElementById("addtaskfolders_lists")
 const updatefolder_lists = document.getElementById("updatefolder_lists");
-const movetaskfolders_list = document.getElementById("movetaskfolders_list");
+// const movetaskfolders_list = document.getElementById("movetaskfolders_list");
 
 if (jwt == null) {
     alert('You need to login before try to make a task!');
@@ -54,15 +54,15 @@ function loadingFolders() {
                 updatefolder_options.innerHTML = list["name"];
                 updatefolder_options.value = list["id"];
                 
-                movefolder_options = document.createElement("option");
-                movefolder_options.innerHTML = list["name"];
-                movefolder_options.value = list["id"];
+                // movefolder_options = document.createElement("option");
+                // movefolder_options.innerHTML = list["name"];
+                // movefolder_options.value = list["id"];
 
                 folder_lists.appendChild(options);
                 deletefolder_lists.appendChild(delete_options);
                 addtaskfolders_lists.appendChild(addtask_options);
                 updatefolder_lists.appendChild(updatefolder_options);
-                movetaskfolders_list.appendChild(movefolder_options)
+                // movetaskfolders_list.appendChild(movefolder_options)
                 folder_counter++;
                 if (folder_counter == objects.length) {
                     loadingFolderOnReload();
@@ -246,9 +246,9 @@ function fetchTask() {
                 const objects = JSON.parse(this.responseText);
                 if (objects.length === 0) {
                     document.getElementById("table").style.display = "none";
-                    document.getElementById("notify").innerHTML = "Your task is empty! Start to make some by press the button below";
+                    document.getElementById("notify").innerHTML = "There is no task today. Make new task!!!";
                 } else {
-                    document.getElementById("th_options").innerHTML = "Task options";
+                    document.getElementById("th_options").innerHTML = "Choose your options";
                     document.getElementById("th_name").innerHTML = "Task name";
                     document.getElementById("th_status").innerHTML = "Task status";
                     for (let list of objects) {
@@ -264,15 +264,15 @@ function fetchTask() {
                         const edit_button = document.createElement("button");
                         const completed_button = document.createElement("button");
                         const share_button = document.createElement("button");
-                        const duplicate_button = document.createElement("button");
-                        const move_button = document.createElement("button");
+                        // const duplicate_button = document.createElement("button");
+                        // const move_button = document.createElement("button");
                         const delete_button = document.createElement("button");
 
                         const edit_i = document.createElement("i");
                         const completed_i = document.createElement("i");
                         const share_i = document.createElement("i");
-                        const duplicate_i = document.createElement("i");
-                        const move_i = document.createElement("i");
+                        // const duplicate_i = document.createElement("i");
+                        // const move_i = document.createElement("i");
                         const delete_i = document.createElement("i");
 
                         th_id.scope = "row";
@@ -295,17 +295,17 @@ function fetchTask() {
                         share_button.setAttribute("data-target", "#shareModal");
                         share_i.className = "fa fa-share-alt";
 
-                        duplicate_button.className = "btn btn-warning 1";
-                        duplicate_button.title = "Duplicate";
-                        duplicate_button.setAttribute("data-toggle", "modal");
-                        duplicate_button.setAttribute("data-target", "#duplicateModal");
-                        duplicate_i.className = "fa fa-copy";
+                        // duplicate_button.className = "btn btn-warning 1";
+                        // duplicate_button.title = "Duplicate";
+                        // duplicate_button.setAttribute("data-toggle", "modal");
+                        // duplicate_button.setAttribute("data-target", "#duplicateModal");
+                        // duplicate_i.className = "fa fa-copy";
 
-                        move_button.className = "btn btn-warning 2";
-                        move_button.title = "Move";
-                        move_button.setAttribute("data-toggle", "modal");
-                        move_button.setAttribute("data-target", "#moveModal");
-                        move_i.className = "fa fa-arrows";
+                        // move_button.className = "btn btn-warning 2";
+                        // move_button.title = "Move";
+                        // move_button.setAttribute("data-toggle", "modal");
+                        // move_button.setAttribute("data-target", "#moveModal");
+                        // move_i.className = "fa fa-arrows";
 
                         delete_button.className = "btn btn-danger 1";
                         delete_button.title = "Delete";
@@ -322,8 +322,8 @@ function fetchTask() {
                             edit_button.style.display = "none";
                             share_button.style.display = "none";
                             completed_button.style.display = "none";
-                            duplicate_button.style.display = "none";
-                            move_button.style.display = "none";
+                            // duplicate_button.style.display = "none";
+                            // move_button.style.display = "none";
                         }
                         if (!list["description"].trim()) {
                             td_details.innerHTML = "No detail has been received.";
@@ -348,11 +348,11 @@ function fetchTask() {
                         td_options.appendChild(share_button);
                         share_button.appendChild(share_i);
 
-                        td_options.appendChild(duplicate_button);
-                        duplicate_button.appendChild(duplicate_i);
+                        // td_options.appendChild(duplicate_button);
+                        // duplicate_button.appendChild(duplicate_i);
 
-                        td_options.appendChild(move_button);
-                        move_button.appendChild(move_i);
+                        // td_options.appendChild(move_button);
+                        // move_button.appendChild(move_i);
 
                         td_options.appendChild(delete_button);
                         delete_button.appendChild(delete_i);
@@ -384,85 +384,85 @@ function fetchTask() {
                             });
                         });
 
-                        const btn_duplicate = document.getElementsByClassName("btn btn-warning 1")[counter];
-                        btn_duplicate.addEventListener('click', function () {
-                            document.getElementById("duplicate_label1").innerHTML = 'Are you sure you want to duplicate <span class = "thick">' + list["name"] + "</span> task?";
-                            const confirm = document.getElementById('duplicate_btn');
-                            confirm.addEventListener('click', function () {
-                                const folder_id = document.getElementById("folder_lists").value;
-                                const task_name = list["name"];
-                                const task_description = list ["description"];
-                                xhttp.open("POST", `${serverUrl}/task_lists/${folder_id}/todos`);
-                                xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-                                xhttp.setRequestHeader("Access-Token", jwt);
-                                xhttp.setRequestHeader("Uid", uid);
-                                xhttp.setRequestHeader("Client", client);
-                                xhttp.send(JSON.stringify({
-                                    "name": task_name,
-                                    "description": task_description
-                                }));
-                                Swal.fire({
-                                    html: "<span class = 'thick'>" + list["name"] + "</span> task duplicated!",
-                                    icon: 'success',
-                                    allowOutsideClick: false,
-                                    allowEscapeKey: false,
-                                    confirmButtonText: 'OK'
-                                }).then((result) => {
-                                    if (result.isConfirmed) {
-                                        location.reload();
-                                    }
-                                });
-                            });
-                        });
+                        // const btn_duplicate = document.getElementsByClassName("btn btn-warning 1")[counter];
+                        // btn_duplicate.addEventListener('click', function () {
+                        //     document.getElementById("duplicate_label1").innerHTML = 'Are you sure you want to duplicate <span class = "thick">' + list["name"] + "</span> task?";
+                        //     const confirm = document.getElementById('duplicate_btn');
+                        //     confirm.addEventListener('click', function () {
+                        //         const folder_id = document.getElementById("folder_lists").value;
+                        //         const task_name = list["name"];
+                        //         const task_description = list ["description"];
+                        //         xhttp.open("POST", `${serverUrl}/task_lists/${folder_id}/todos`);
+                        //         xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+                        //         xhttp.setRequestHeader("Access-Token", jwt);
+                        //         xhttp.setRequestHeader("Uid", uid);
+                        //         xhttp.setRequestHeader("Client", client);
+                        //         xhttp.send(JSON.stringify({
+                        //             "name": task_name,
+                        //             "description": task_description
+                        //         }));
+                        //         Swal.fire({
+                        //             html: "<span class = 'thick'>" + list["name"] + "</span> task duplicated!",
+                        //             icon: 'success',
+                        //             allowOutsideClick: false,
+                        //             allowEscapeKey: false,
+                        //             confirmButtonText: 'OK'
+                        //         }).then((result) => {
+                        //             if (result.isConfirmed) {
+                        //                 location.reload();
+                        //             }
+                        //         });
+                        //     });
+                        // });
 
-                        const btn_move = document.getElementsByClassName("btn btn-warning 2")[counter];
-                        btn_move.addEventListener('click', function () {
-                            const confirm = document.getElementById('move_btn');
-                            confirm.addEventListener('click', function () {
-                                const oldfolder_id = document.getElementById("folder_lists").value;
-                                const newfolder_id = movetaskfolders_list.value;
-                                const folder_name = movetaskfolders_list.options[movetaskfolders_list.selectedIndex].text;
-                                const task_name = list["name"];
-                                const task_description = list ["description"];
+                        // const btn_move = document.getElementsByClassName("btn btn-warning 2")[counter];
+                        // btn_move.addEventListener('click', function () {
+                        //     const confirm = document.getElementById('move_btn');
+                        //     confirm.addEventListener('click', function () {
+                        //         const oldfolder_id = document.getElementById("folder_lists").value;
+                        //         const newfolder_id = movetaskfolders_list.value;
+                        //         const folder_name = movetaskfolders_list.options[movetaskfolders_list.selectedIndex].text;
+                        //         const task_name = list["name"];
+                        //         const task_description = list ["description"];
 
-                                if (oldfolder_id == newfolder_id) {
-                                    Swal.fire({
-                                        html: "Your can't move task to the same folder, please select a different folder",
-                                        icon: 'error',
-                                        confirmButtonText: 'OK'
-                                    })
-                                } else {
-                                    const xhttp_delete = new XMLHttpRequest();
-                                    xhttp_delete.open("DELETE", `${serverUrl}/task_lists/${selected}/todos/${list["id"]}`);
-                                    xhttp_delete.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-                                    xhttp_delete.setRequestHeader("Access-Token", jwt);
-                                    xhttp_delete.setRequestHeader("Uid", uid);
-                                    xhttp_delete.setRequestHeader("Client", client);
-                                    xhttp_delete.send();
+                        //         if (oldfolder_id == newfolder_id) {
+                        //             Swal.fire({
+                        //                 html: "Your can't move task to the same folder, please select a different folder",
+                        //                 icon: 'error',
+                        //                 confirmButtonText: 'OK'
+                        //             })
+                        //         } else {
+                        //             const xhttp_delete = new XMLHttpRequest();
+                        //             xhttp_delete.open("DELETE", `${serverUrl}/task_lists/${selected}/todos/${list["id"]}`);
+                        //             xhttp_delete.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+                        //             xhttp_delete.setRequestHeader("Access-Token", jwt);
+                        //             xhttp_delete.setRequestHeader("Uid", uid);
+                        //             xhttp_delete.setRequestHeader("Client", client);
+                        //             xhttp_delete.send();
     
-                                    xhttp.open("POST", `${serverUrl}/task_lists/${newfolder_id}/todos`);
-                                    xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-                                    xhttp.setRequestHeader("Access-Token", jwt);
-                                    xhttp.setRequestHeader("Uid", uid);
-                                    xhttp.setRequestHeader("Client", client);
-                                    xhttp.send(JSON.stringify({
-                                        "name": task_name,
-                                        "description": task_description
-                                    }));
-                                    Swal.fire({
-                                        html: "<span class = 'thick'>" + list["name"] + "</span> task moved to <span class = 'thick'>" + folder_name + "</span> folder!",
-                                        icon: 'success',
-                                        allowOutsideClick: false,
-                                        allowEscapeKey: false,
-                                        confirmButtonText: 'OK'
-                                    }).then((result) => {
-                                        if (result.isConfirmed) {
-                                            location.reload();
-                                        }
-                                    });
-                                }                             
-                            });
-                        });
+                        //             xhttp.open("POST", `${serverUrl}/task_lists/${newfolder_id}/todos`);
+                        //             xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+                        //             xhttp.setRequestHeader("Access-Token", jwt);
+                        //             xhttp.setRequestHeader("Uid", uid);
+                        //             xhttp.setRequestHeader("Client", client);
+                        //             xhttp.send(JSON.stringify({
+                        //                 "name": task_name,
+                        //                 "description": task_description
+                        //             }));
+                        //             Swal.fire({
+                        //                 html: "<span class = 'thick'>" + list["name"] + "</span> task moved to <span class = 'thick'>" + folder_name + "</span> folder!",
+                        //                 icon: 'success',
+                        //                 allowOutsideClick: false,
+                        //                 allowEscapeKey: false,
+                        //                 confirmButtonText: 'OK'
+                        //             }).then((result) => {
+                        //                 if (result.isConfirmed) {
+                        //                     location.reload();
+                        //                 }
+                        //             });
+                        //         }                             
+                        //     });
+                        // });
 
                         const btn_edit = document.getElementsByClassName("btn btn-primary 1")[counter];
                         btn_edit.addEventListener('click', function () {
@@ -672,7 +672,7 @@ function updateFolder() {
         });
     } else if (folder_oldname == folder_name) {
         Swal.fire({
-            html: 'Your inputed name is the same with old folder name <br> `(*>﹏<*)′',
+            html: 'Your inputed name is the same with old folder name <br> ',
             icon: 'error',
             confirmButtonText: 'OK'
         });
