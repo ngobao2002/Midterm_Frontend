@@ -642,7 +642,7 @@ function deleteFolder() {
     if (selected) {
         Swal.fire({
             title: 'Are you sure?',
-            html: "You are about to delete <span class = 'thick'>" + text + "</span> folder! <p class = thick> Action can't be revert after</p>",
+            html: "You are about to delete <span class = 'thick'>" + text + "</span> space! <p class = thick> Action can't be revert after</p>",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
@@ -659,7 +659,7 @@ function deleteFolder() {
                 xhttp.setRequestHeader("Client", client);
                 xhttp.send();
                 Swal.fire({
-                    html: "<span class = 'thick'>" + text + "</span> folder deleted!",
+                    html: "<span class = 'thick'>" + text + "</span> space deleted!",
                     icon: 'success',
                     allowOutsideClick: false,
                     allowEscapeKey: false,
@@ -673,7 +673,7 @@ function deleteFolder() {
         })
     } else {
         Swal.fire({
-            text: 'Please choose folder',
+            text: 'Please choose space',
             icon: 'error',
             confirmButtonText: 'OK'
         });
@@ -687,13 +687,13 @@ function updateFolder() {
 
     if (folder_name == "") {
         Swal.fire({
-            text: 'Oopsie hold on folder name is empty 😂',
+            text: 'Your space name is empty ',
             icon: 'error',
             confirmButtonText: 'OK'
         });
     } else if (folder_oldname == folder_name) {
         Swal.fire({
-            html: 'Your inputed name is the same with old folder name <br> ',
+            html: 'Your inputed name is the same with old space name <br> ',
             icon: 'error',
             confirmButtonText: 'OK'
         });
@@ -713,7 +713,7 @@ function updateFolder() {
             if (this.readyState == 4) {
                 if (this.status == 200) {
                     Swal.fire({
-                        html: "<span class = 'thick'>" + folder_oldname + "</span> folder name updated to <span class = 'thick'>" + folder_name + "</span>!",
+                        html: "<span class = 'thick'>" + folder_oldname + "</span> space name updated to <span class = 'thick'>" + folder_name + "</span>!",
                         icon: 'success',
                         allowOutsideClick: false,
                         allowEscapeKey: false,
@@ -897,4 +897,3 @@ function sortTableAlphabetical(n) {
     }
 }
 
-//xD
